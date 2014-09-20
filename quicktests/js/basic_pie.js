@@ -1,6 +1,6 @@
 function makeData() {
   "use strict";
-  return [{value: 1}, {value: 2}, {value: 0}, {value: 3}];
+  return [{value: 1}, {value: 2}, {value: 3}];
 }
 
 function run(div, data, Plottable) {
@@ -9,5 +9,6 @@ function run(div, data, Plottable) {
   var svg = div.append("svg").attr("height", 500);
   new Plottable.Plot.Pie()
                     .addDataset(data)
+                    .animate(true)
                     .renderTo(svg);
 }

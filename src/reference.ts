@@ -73,6 +73,7 @@
 /// <reference path="animators/nullAnimator.ts" />
 /// <reference path="animators/baseAnimator.ts" />
 /// <reference path="animators/iterativeDelayAnimator.ts" />
+/// <reference path="animators/arcAnimator.ts" />
 /// <reference path="animators/rectAnimator.ts" />
 
 /// <reference path="interactions/keyEventListener.ts" />

@@ -109,7 +109,7 @@ export module Plot {
     }
 
     public _getAnimator(drawer: Abstract._Drawer, index: number): Animator.IPlotAnimator {
-      return Abstract.NewStylePlot.prototype._getAnimator.call(this, drawer, index);
+      return new Animator.Arc();
     }
 
     public _getDrawer(key: string): Abstract._Drawer {

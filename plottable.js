@@ -4611,7 +4611,7 @@ var Plottable;
                 return retargetedAttrToProjector;
             };
             Pie.prototype._getAnimator = function (drawer, index) {
-                return Plottable.Abstract.NewStylePlot.prototype._getAnimator.call(this, drawer, index);
+                return new Plottable.Animator.Arc();
             };
             Pie.prototype._getDrawer = function (key) {
                 return new Plottable._Drawer.Arc(key);
@@ -5779,6 +5779,35 @@ var Plottable;
             return IterativeDelay;
         })(Animator.Base);
         Animator.IterativeDelay = IterativeDelay;
+    })(Plottable.Animator || (Plottable.Animator = {}));
+    var Animator = Plottable.Animator;
+})(Plottable || (Plottable = {}));
+
+var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+var Plottable;
+(function (Plottable) {
+    (function (Animator) {
+        var Arc = (function (_super) {
+            __extends(Arc, _super);
+            function Arc() {
+                _super.call(this);
+            }
+            Arc.prototype.animate = function (selection, attrToProjector) {
+                var startAttrToProjector = {};
+                d3.keys(attrToProjector).forEach(function (attr) { return startAttrToProjector[attr] = attrToProjector[attr]; });
+                startAttrToProjector["d"] = d3.svg.arc().innerRadius(0).outerRadius(0);
+                selection.attr(startAttrToProjector);
+                ;
+                return _super.prototype.animate.call(this, selection, attrToProjector);
+            };
+            return Arc;
+        })(Animator.Base);
+        Animator.Arc = Arc;
     })(Plottable.Animator || (Plottable.Animator = {}));
     var Animator = Plottable.Animator;
 })(Plottable || (Plottable = {}));

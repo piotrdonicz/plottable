@@ -959,6 +959,16 @@ declare module Plottable {
 
 declare module Plottable {
     module Animator {
+        class Arc extends Base {
+            constructor();
+            animate(selection: any, attrToProjector: IAttributeToProjector): any;
+        }
+    }
+}
+
+
+declare module Plottable {
+    module Animator {
         class Rect extends Base {
             static ANIMATED_ATTRIBUTES: string[];
             isVertical: boolean;
