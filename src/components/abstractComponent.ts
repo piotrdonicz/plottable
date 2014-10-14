@@ -44,7 +44,7 @@ export module Component {
         throw new Error("Can't reuse remove()-ed components!");
       }
 
-      if (element.node().nodeName === "svg") {
+        if (_Util.DOM.isSvg(element)) {
         // svg node gets the "plottable" CSS class
         this.rootSVG = element;
         this.rootSVG.classed("plottable", true);
@@ -203,7 +203,7 @@ export module Component {
         } else {
           selection = d3.select(element);
         }
-        if (!selection.node() || selection.node().nodeName !== "svg") {
+        if (!selection.node() || !_Util.DOM.isSvg(selection)) {
           throw new Error("Plottable requires a valid SVG to renderTo");
         }
         this._anchor(selection);

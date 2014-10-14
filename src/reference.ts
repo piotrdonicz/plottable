@@ -88,3 +88,5 @@
 
 /// <reference path="dispatchers/abstractDispatcher.ts" />
 /// <reference path="dispatchers/mouseDispatcher.ts" />
+
+/// <reference path="node_plottable.ts" />
